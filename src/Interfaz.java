@@ -504,6 +504,14 @@ public class Interfaz extends javax.swing.JFrame {
         broad = broad + Conversor(255);
         broadcast.setText(broad);
         
+        broad = Conversor(Integer. parseInt(TextRed1.getText()));
+        broad = broad + ".";
+        broad = broad + Conversor(Integer. parseInt(TextRed2.getText()));
+        broad = broad + ".";
+        broad = broad + Conversor(Integer. parseInt(TextRed3.getText()));
+        broad = broad + ".";
+        broad = broad + Conversor(255);
+        broadcast.setText(broad);
         //String texto = TextPrueba101.getText();
         //int valor = Integer. parseInt(texto); 
         //texto = Conversor(valor);
