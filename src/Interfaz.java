@@ -18,6 +18,10 @@ public class Interfaz extends javax.swing.JFrame {
     public Interfaz() {
         initComponents();
         this.setLocationRelativeTo(null);
+        binario1.setEnabled(false);
+        binario2.setEnabled(false);
+        gateway.setEnabled(false);
+        broadcast.setEnabled(false);
     }
 
     /**
@@ -82,6 +86,10 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         binario1 = new javax.swing.JTextField();
         binario2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        gateway = new javax.swing.JTextField();
+        broadcast = new javax.swing.JTextField();
         LabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -430,10 +438,20 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 70, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel6.setText("Red 1");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 70, -1));
-        getContentPane().add(binario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 270, 30));
+        jLabel6.setText("Broadcast");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 170, 120, -1));
+        getContentPane().add(binario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 270, 30));
         getContentPane().add(binario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 280, 30));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel7.setText("Red 1");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 70, -1));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel8.setText("Gateway ");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 110, -1));
+        getContentPane().add(gateway, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 270, 30));
+        getContentPane().add(broadcast, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 280, 30));
 
         LabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.jpg"))); // NOI18N
         getContentPane().add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -447,6 +465,8 @@ public class Interfaz extends javax.swing.JFrame {
         String res2 = "";
         String bin1 = "";
         String bin2 = "";
+        String gate = "";
+        String broad = "";
         
         bin1 = Conversor(Integer. parseInt(TextRed1.getText()));
         bin1 = bin1 + ".";
@@ -465,6 +485,24 @@ public class Interfaz extends javax.swing.JFrame {
         bin2 = bin2 + ".";
         bin2 = bin2 + Conversor(Integer. parseInt(TextMascara4.getText()));
         binario2.setText(bin2);
+        
+        gate = Conversor(Integer. parseInt(TextRed1.getText()));
+        gate = gate + ".";
+        gate = gate + Conversor(Integer. parseInt(TextRed2.getText()));
+        gate = gate + ".";
+        gate = gate + Conversor(Integer. parseInt(TextRed3.getText()));
+        gate = gate + ".";
+        gate = gate + Conversor(Integer. parseInt(TextRed4.getText())+ 1);
+        gateway.setText(gate);
+        
+        broad = Conversor(Integer. parseInt(TextRed1.getText()));
+        broad = broad + ".";
+        broad = broad + Conversor(Integer. parseInt(TextRed2.getText()));
+        broad = broad + ".";
+        broad = broad + Conversor(Integer. parseInt(TextRed3.getText()));
+        broad = broad + ".";
+        broad = broad + Conversor(255);
+        broadcast.setText(broad);
         
         //String texto = TextPrueba101.getText();
         //int valor = Integer. parseInt(texto); 
@@ -630,6 +668,10 @@ public class Interfaz extends javax.swing.JFrame {
         TextPrueba402.setText(null);
         TextPrueba403.setText(null);
         TextPrueba404.setText(null);
+        gateway.setText(null);
+        broadcast.setText(null);
+        binario1.setText(null);
+        binario2.setText(null);
     }//GEN-LAST:event_BotonLimpiarActionPerformed
 
     /**
@@ -698,6 +740,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField TextRed4;
     private javax.swing.JTextField binario1;
     private javax.swing.JTextField binario2;
+    private javax.swing.JTextField broadcast;
+    private javax.swing.JTextField gateway;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -721,6 +765,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
