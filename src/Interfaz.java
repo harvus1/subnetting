@@ -80,6 +80,8 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        binario1 = new javax.swing.JTextField();
+        binario2 = new javax.swing.JTextField();
         LabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -92,7 +94,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Mascara");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, 100, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, 100, -1));
 
         BotonComprobar.setBackground(new java.awt.Color(0, 0, 204));
         BotonComprobar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -123,11 +125,11 @@ public class Interfaz extends javax.swing.JFrame {
                 TextRed2ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextRed2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 50, -1));
+        getContentPane().add(TextRed2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 50, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel9.setText(".");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, 30));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, -1, 30));
 
         TextRed3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextRed3.setText("0");
@@ -136,7 +138,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TextRed3ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextRed3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 50, -1));
+        getContentPane().add(TextRed3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 50, -1));
 
         TextRed4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextRed4.setText("5");
@@ -145,7 +147,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TextRed4ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextRed4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 50, -1));
+        getContentPane().add(TextRed4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 50, -1));
 
         TextPrueba303.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextPrueba303.setText("24");
@@ -158,11 +160,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel10.setText(".");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, 30));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel11.setText(".");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, 30));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, -1, 30));
 
         TextMascara1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextMascara1.setText("255");
@@ -171,7 +173,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TextMascara1ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextMascara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 110, 50, -1));
+        getContentPane().add(TextMascara1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 50, -1));
 
         TextMascara2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextMascara2.setText("255");
@@ -180,7 +182,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TextMascara2ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextMascara2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, 50, -1));
+        getContentPane().add(TextMascara2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 50, -1));
 
         TextMascara3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextMascara3.setText("255");
@@ -189,7 +191,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TextMascara3ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextMascara3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 110, 50, -1));
+        getContentPane().add(TextMascara3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 50, -1));
 
         TextMascara4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextMascara4.setText("0");
@@ -198,7 +200,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TextMascara4ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextMascara4, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 50, -1));
+        getContentPane().add(TextMascara4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 50, -1));
 
         TextPrueba101.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextPrueba101.setText("192");
@@ -310,11 +312,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel12.setText(".");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 110, -1, 30));
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, -1, 30));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel13.setText(".");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, -1, 30));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 80, -1, 30));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel14.setText(".");
@@ -371,7 +373,7 @@ public class Interfaz extends javax.swing.JFrame {
                 TextRed1ActionPerformed(evt);
             }
         });
-        getContentPane().add(TextRed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 50, -1));
+        getContentPane().add(TextRed1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 50, -1));
 
         TextPrueba403.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         TextPrueba403.setText("0");
@@ -402,7 +404,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel26.setText(".");
-        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, 30));
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, 30));
 
         BotonSalir.setBackground(new java.awt.Color(204, 0, 0));
         BotonSalir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -417,7 +419,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("RED");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 60, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, 60, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setText("Red 3");
@@ -430,6 +432,8 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel6.setText("Red 1");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 70, -1));
+        getContentPane().add(binario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 270, 30));
+        getContentPane().add(binario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 280, 30));
 
         LabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.jpg"))); // NOI18N
         getContentPane().add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -441,20 +445,41 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
         String res1 = "";
         String res2 = "";
+        String bin1 = "";
+        String bin2 = "";
         
-        String texto = TextPrueba101.getText();
-        int valor = Integer. parseInt(texto); 
-        texto = Conversor(valor);
-        res1 = texto;
-        texto = TextPrueba201.getText();
-        valor = Integer. parseInt(texto); 
-        texto = Conversor(valor);
-        res2 = texto;
-        texto = Operacion_And(res1,res2);
-        JOptionPane.showMessageDialog(null,
-                texto,
-                "PopUp Dialog",
-                JOptionPane.INFORMATION_MESSAGE);
+        bin1 = Conversor(Integer. parseInt(TextRed1.getText()));
+        bin1 = bin1 + ".";
+        bin1 = bin1 + Conversor(Integer. parseInt(TextRed2.getText()));
+        bin1 = bin1 + ".";
+        bin1 = bin1 + Conversor(Integer. parseInt(TextRed3.getText()));
+        bin1 = bin1 + ".";
+        bin1 = bin1 + Conversor(Integer. parseInt(TextRed4.getText()));
+        binario1.setText(bin1);
+        
+        bin2 = Conversor(Integer. parseInt(TextMascara1.getText()));
+        bin2 = bin2 + ".";
+        bin2 = bin2 + Conversor(Integer. parseInt(TextMascara2.getText()));
+        bin2 = bin2 + ".";
+        bin2 = bin2 + Conversor(Integer. parseInt(TextMascara3.getText()));
+        bin2 = bin2 + ".";
+        bin2 = bin2 + Conversor(Integer. parseInt(TextMascara4.getText()));
+        binario2.setText(bin2);
+        
+        //String texto = TextPrueba101.getText();
+        //int valor = Integer. parseInt(texto); 
+        //texto = Conversor(valor);
+        //res1 = texto;
+        //texto = TextPrueba201.getText();
+        //valor = Integer. parseInt(texto); 
+        //texto = Conversor(valor);
+        //res2 = texto;
+        
+        //texto = Operacion_And(res1,res2);
+        //JOptionPane.showMessageDialog(null,
+                //texto,
+                //"PopUp Dialog",
+                //JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_BotonComprobarActionPerformed
 
@@ -671,6 +696,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JTextField TextRed2;
     private javax.swing.JTextField TextRed3;
     private javax.swing.JTextField TextRed4;
+    private javax.swing.JTextField binario1;
+    private javax.swing.JTextField binario2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
