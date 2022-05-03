@@ -1,4 +1,4 @@
-###SUBNETTING
+### SUBNETTING
 
 Subnetting hace referencia a la subdivisión de una red en varias subredes. El Subneteo permite a los administrados de red poder dividir una red empresarial en varias subredes sin hacerlo público en internet. Esto se traduce en que el router que establece la conexión entre la red e internet se especifica como dirección única. Aunque puede que haya varios hosts ocultos. Así el numero de hosts que está a disposición el administrador aumenta considerablemente.
 
