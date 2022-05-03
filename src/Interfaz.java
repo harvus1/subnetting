@@ -33,6 +33,7 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        TextMascara7 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         BotonComprobar = new javax.swing.JButton();
@@ -90,7 +91,17 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         gateway = new javax.swing.JTextField();
         broadcast = new javax.swing.JTextField();
+        Mascara = new javax.swing.JTextField();
+        jLabel27 = new javax.swing.JLabel();
         LabelFondo = new javax.swing.JLabel();
+
+        TextMascara7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        TextMascara7.setText("255");
+        TextMascara7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextMascara7ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -101,8 +112,8 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 70, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("Mascara");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 30, 100, -1));
+        jLabel2.setText("/");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 20, -1));
 
         BotonComprobar.setBackground(new java.awt.Color(0, 0, 204));
         BotonComprobar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -453,6 +464,19 @@ public class Interfaz extends javax.swing.JFrame {
         getContentPane().add(gateway, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 270, 30));
         getContentPane().add(broadcast, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 280, 30));
 
+        Mascara.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Mascara.setText("0");
+        Mascara.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MascaraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Mascara, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 50, -1));
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel27.setText("Mascara");
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, 100, -1));
+
         LabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondo.jpg"))); // NOI18N
         getContentPane().add(LabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -504,6 +528,7 @@ public class Interfaz extends javax.swing.JFrame {
         broad = broad + Conversor(255);
         broadcast.setText(broad);
         
+        
         broad = Conversor(Integer. parseInt(TextRed1.getText()));
         broad = broad + ".";
         broad = broad + Conversor(Integer. parseInt(TextRed2.getText()));
@@ -512,21 +537,35 @@ public class Interfaz extends javax.swing.JFrame {
         broad = broad + ".";
         broad = broad + Conversor(255);
         broadcast.setText(broad);
-        //String texto = TextPrueba101.getText();
-        //int valor = Integer. parseInt(texto); 
-        //texto = Conversor(valor);
-        //res1 = texto;
-        //texto = TextPrueba201.getText();
-        //valor = Integer. parseInt(texto); 
-        //texto = Conversor(valor);
-        //res2 = texto;
         
-        //texto = Operacion_And(res1,res2);
-        //JOptionPane.showMessageDialog(null,
-                //texto,
-                //"PopUp Dialog",
-                //JOptionPane.INFORMATION_MESSAGE);
+        //Registra el valor de la mascara
+        int valor_mascara = Integer. parseInt(Mascara.getText());
+
+        //Muestra el valor de la mascara en decimal        
+        String Mascara[] = Crear_Mascara(valor_mascara);
+        TextMascara1.setText(String.valueOf(Integer.parseInt(Mascara[0],2)));
+        TextMascara2.setText(String.valueOf(Integer.parseInt(Mascara[1],2)));
+        TextMascara3.setText(String.valueOf(Integer.parseInt(Mascara[2],2)));
+        TextMascara4.setText(String.valueOf(Integer.parseInt(Mascara[3],2)));
+     
+             
+        //Guarda el vector de la direccion Red
+        String[] Red=new String[4];
+        Red[0] = Conversor(Integer. parseInt(TextRed1.getText()));
+        Red[1] = Conversor(Integer. parseInt(TextRed2.getText()));
+        Red[2] = Conversor(Integer. parseInt(TextRed3.getText()));
+        Red[3] = Conversor(Integer. parseInt(TextRed4.getText()));
         
+        //Establece el BroadCast
+        Red = Crear_broadcast(valor_mascara,Red);
+        broad = String.valueOf(Integer.parseInt(Red[0],2));
+        broad = broad + ".";
+        broad += String.valueOf(Integer.parseInt(Red[1],2));
+        broad = broad + ".";
+        broad += String.valueOf(Integer.parseInt(Red[2],2));
+        broad = broad + ".";
+        broad +=String.valueOf(Integer.parseInt(Red[3],2));
+        broadcast.setText(broad);
     }//GEN-LAST:event_BotonComprobarActionPerformed
 
     private void TextRed2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextRed2ActionPerformed
@@ -657,6 +696,81 @@ public class Interfaz extends javax.swing.JFrame {
         return Resultado;
     }
     
+    public String[] Crear_Mascara(int mascara)
+    {
+        String[] mascara_vector = new String[4];
+        String bits_mascara = "";
+        if (mascara % 8 != 0) {
+            bits_mascara = String.format("%-8s", String.format("%" + mascara % 8 + "s", "").replace(" ", "1")).replace(" ", "0");
+        } else {
+            bits_mascara = "00000000";
+        }
+        if (mascara < 8) {
+            mascara_vector[0] = bits_mascara;
+            mascara_vector[1] = "00000000";
+            mascara_vector[2] = "00000000";
+            mascara_vector[3] = "00000000";
+        } else if (mascara < 16) {
+            mascara_vector[0] = "11111111";
+            mascara_vector[1] = bits_mascara;
+            mascara_vector[2] = "00000000";
+            mascara_vector[3] = "00000000";
+        } else if (mascara < 24) {
+            mascara_vector[0] = "11111111";
+            mascara_vector[1] = "11111111";
+            mascara_vector[2] = bits_mascara;
+            mascara_vector[3] = "00000000";
+        } else if (mascara < 32) {
+            mascara_vector[0] = "11111111";
+            mascara_vector[1] = "11111111";
+            mascara_vector[2] = "11111111";
+            mascara_vector[3] = bits_mascara;
+        }
+
+        return mascara_vector;
+    }
+            
+    public String[] Crear_broadcast(int mascara, String[] Red)
+    {
+       String[] mascara_vector = Crear_Mascara(mascara);
+       //Determinar la Red
+       for(int i=0;i<4;i++) 
+       {
+           Red[i]= Operacion_And(mascara_vector[i],Red[i]);
+       }
+       
+       //ActivarBits
+         if (mascara < 8) {
+            Red[0] = ActivarBits(Red[0],mascara%8);
+            Red[1] = "11111111";
+            Red[2] = "11111111";
+            Red[3] = "11111111";
+        } else if (mascara < 16) {
+            Red[1] = ActivarBits(Red[1],mascara%8);
+            Red[2] = "11111111";
+            Red[3] = "11111111";
+        } else if (mascara < 24) {
+            Red[2] = ActivarBits(Red[2],mascara%8);
+            Red[3] = "11111111";
+        } else if (mascara < 32) {
+            Red[3] = ActivarBits(Red[3],mascara%8);
+        }
+       return Red;
+    }
+    
+    
+    public String ActivarBits(String red, int mascara)
+    {
+        String resultado="";
+        if (mascara != 0) {
+            resultado = red.substring(0, mascara - 1);
+        } 
+         for (int i = mascara; i < 8; i++) {
+                resultado += "1";
+            }
+        
+        return resultado; 
+    }
     
     private void BotonLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonLimpiarActionPerformed
         // TODO add your handling code here:
@@ -681,6 +795,14 @@ public class Interfaz extends javax.swing.JFrame {
         binario1.setText(null);
         binario2.setText(null);
     }//GEN-LAST:event_BotonLimpiarActionPerformed
+
+    private void TextMascara7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextMascara7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextMascara7ActionPerformed
+
+    private void MascaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MascaraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MascaraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -722,10 +844,12 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JButton BotonLimpiar;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JLabel LabelFondo;
+    private javax.swing.JTextField Mascara;
     private javax.swing.JTextField TextMascara1;
     private javax.swing.JTextField TextMascara2;
     private javax.swing.JTextField TextMascara3;
     private javax.swing.JTextField TextMascara4;
+    private javax.swing.JTextField TextMascara7;
     private javax.swing.JTextField TextPrueba101;
     private javax.swing.JTextField TextPrueba102;
     private javax.swing.JTextField TextPrueba103;
@@ -769,6 +893,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
